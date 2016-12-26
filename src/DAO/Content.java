@@ -8,13 +8,13 @@ public class Content implements java.io.Serializable {
 
 	// Fields
 
-	private Integer id;
-	private String QContent;
-	private String QAnswer;
-	private String QA;
-	private String QB;
-	private String QC;
-	private String QD;
+	private String id;
+	private String content;
+	private String answer;
+	private String qa;
+	private String qb;
+	private String qc;
+	private String qd;
 
 	// Constructors
 
@@ -22,80 +22,79 @@ public class Content implements java.io.Serializable {
 	public Content() {
 	}
 
+	/** minimal constructor */
+	public Content(String id) {
+		this.id = id;
+	}
+
 	/** full constructor */
-	public Content(String QContent, String QAnswer, String QA, String QB,
-			String QC, String QD) {
-		this.QContent = QContent;
-		this.QAnswer = QAnswer;
-		this.QA = QA;
-		this.QB = QB;
-		this.QC = QC;
-		this.QD = QD;
+	public Content(String id, String content, String answer, String qa,
+			String qb, String qc, String qd) {
+		this.id = id;
+		this.content = content;
+		this.answer = answer;
+		this.qa = qa;
+		this.qb = qb;
+		this.qc = qc;
+		this.qd = qd;
 	}
 
 	// Property accessors
 
-	public Integer getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getQContent() {
-		return this.QContent;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setQContent(String QContent) {
-		this.QContent = QContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public String getQAnswer() {
-		return this.QAnswer;
+	public String getAnswer() {
+		return this.answer;
 	}
 
-	public void setQAnswer(String QAnswer) {
-		this.QAnswer = QAnswer;
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
 
-	public String getQA() {
-		return this.QA;
+	public String getQa() {
+		return this.qa;
 	}
 
-	public void setQA(String QA) {
-		this.QA = QA;
+	public void setQa(String qa) {
+		this.qa = qa;
 	}
 
-	public String getQB() {
-		return this.QB;
+	public String getQb() {
+		return this.qb;
 	}
 
-	public void setQB(String QB) {
-		this.QB = QB;
+	public void setQb(String qb) {
+		this.qb = qb;
 	}
 
-	public String getQC() {
-		return this.QC;
+	public String getQc() {
+		return this.qc;
 	}
 
-	public void setQC(String QC) {
-		this.QC = QC;
+	public void setQc(String qc) {
+		this.qc = qc;
 	}
 
-	public String getQD() {
-		return this.QD;
+	public String getQd() {
+		return this.qd;
 	}
 
-	public void setQD(String QD) {
-		this.QD = QD;
-	}
-
-	@Override
-	public String toString() {
-		return "Content [id=" + id + ", QContent=" + QContent + ", QAnswer="
-				+ QAnswer + ", QA=" + QA + ", QB=" + QB + ", QC=" + QC
-				+ ", QD=" + QD + "]";
+	public void setQd(String qd) {
+		this.qd = qd;
 	}
 
 }

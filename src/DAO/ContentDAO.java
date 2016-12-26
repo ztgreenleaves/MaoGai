@@ -21,12 +21,12 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 public class ContentDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(ContentDAO.class);
 	// property constants
-	public static final String _QCONTENT = "QContent";
-	public static final String _QANSWER = "QAnswer";
-	public static final String _QA = "QA";
-	public static final String _QB = "QB";
-	public static final String _QC = "QC";
-	public static final String _QD = "QD";
+	public static final String CONTENT = "content";
+	public static final String ANSWER = "answer";
+	public static final String QA = "qa";
+	public static final String QB = "qb";
+	public static final String QC = "qc";
+	public static final String QD = "qd";
 
 	protected void initDao() {
 		// do nothing
@@ -54,7 +54,7 @@ public class ContentDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public Content findById(java.lang.Integer id) {
+	public Content findById(java.lang.String id) {
 		log.debug("getting Content instance with id: " + id);
 		try {
 			Content instance = (Content) getHibernateTemplate().get(
@@ -92,28 +92,28 @@ public class ContentDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByQContent(Object QContent) {
-		return findByProperty(_QCONTENT, QContent);
+	public List findByContent(Object content) {
+		return findByProperty(CONTENT, content);
 	}
 
-	public List findByQAnswer(Object QAnswer) {
-		return findByProperty(_QANSWER, QAnswer);
+	public List findByAnswer(Object answer) {
+		return findByProperty(ANSWER, answer);
 	}
 
-	public List findByQA(Object QA) {
-		return findByProperty(_QA, QA);
+	public List findByQa(Object qa) {
+		return findByProperty(QA, qa);
 	}
 
-	public List findByQB(Object QB) {
-		return findByProperty(_QB, QB);
+	public List findByQb(Object qb) {
+		return findByProperty(QB, qb);
 	}
 
-	public List findByQC(Object QC) {
-		return findByProperty(_QC, QC);
+	public List findByQc(Object qc) {
+		return findByProperty(QC, qc);
 	}
 
-	public List findByQD(Object QD) {
-		return findByProperty(_QD, QD);
+	public List findByQd(Object qd) {
+		return findByProperty(QD, qd);
 	}
 
 	public List findAll() {
