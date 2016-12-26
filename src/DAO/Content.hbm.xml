@@ -6,9 +6,9 @@
 -->
 <hibernate-mapping>
     <class name="DAO.Content" table="content" catalog="maogaixiti">
-        <id name="QDi" type="java.lang.Integer">
-            <column name="q_di" />
-            <generator class="assigned" />
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
         </id>
         <property name="QContent" type="java.lang.String">
             <column name="q_content" />

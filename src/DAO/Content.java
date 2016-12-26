@@ -8,7 +8,7 @@ public class Content implements java.io.Serializable {
 
 	// Fields
 
-	private Integer QDi;
+	private Integer id;
 	private String QContent;
 	private String QAnswer;
 	private String QA;
@@ -22,15 +22,9 @@ public class Content implements java.io.Serializable {
 	public Content() {
 	}
 
-	/** minimal constructor */
-	public Content(Integer QDi) {
-		this.QDi = QDi;
-	}
-
 	/** full constructor */
-	public Content(Integer QDi, String QContent, String QAnswer, String QA,
-			String QB, String QC, String QD) {
-		this.QDi = QDi;
+	public Content(String QContent, String QAnswer, String QA, String QB,
+			String QC, String QD) {
 		this.QContent = QContent;
 		this.QAnswer = QAnswer;
 		this.QA = QA;
@@ -41,12 +35,12 @@ public class Content implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getQDi() {
-		return this.QDi;
+	public Integer getId() {
+		return this.id;
 	}
 
-	public void setQDi(Integer QDi) {
-		this.QDi = QDi;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getQContent() {
@@ -95,6 +89,13 @@ public class Content implements java.io.Serializable {
 
 	public void setQD(String QD) {
 		this.QD = QD;
+	}
+
+	@Override
+	public String toString() {
+		return "Content [id=" + id + ", QContent=" + QContent + ", QAnswer="
+				+ QAnswer + ", QA=" + QA + ", QB=" + QB + ", QC=" + QC
+				+ ", QD=" + QD + "]";
 	}
 
 }
