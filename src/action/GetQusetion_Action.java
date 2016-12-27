@@ -7,21 +7,24 @@ import DAO.Content;
 import DAO.ContentDAO;
 import service.GetCode;
 
-public class GetQusetion_Action {
-	private String number;
+public class GetQusetion_Action{
+
 	List<Content> list;
-	int t,i;
-	String s="";
+	private String number;
+	static List<String> answerList;
+	int t, i;
+	String s = "";
 	GetCode getcode;
-	public String getsuccess(){
+
+	public String getsuccess() {
 		t = Integer.parseInt(number);
-		//GetCode getcode = new GetCode();
-		List<Integer> listcode = new ArrayList<Integer>(); 
+		// GetCode getcode = new GetCode();
+		List<Integer> listcode = new ArrayList<Integer>();
 		listcode = getcode.Question(t);
 		setList(getcode.getList(listcode));
 		return "success";
 	}
-	
+
 	public String getNumber() {
 		return number;
 	}
@@ -45,5 +48,5 @@ public class GetQusetion_Action {
 	public void setGetcode(GetCode getcode) {
 		this.getcode = getcode;
 	}
-	
+
 }

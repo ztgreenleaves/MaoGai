@@ -9,6 +9,7 @@ import DAO.ContentDAO;
 
 public class GetCode {
 	ContentDAO dao;
+	static int sumQuestion = 250;
 	public  static List<Integer> Question(int s){
 		Random  r = new Random(); 
 
@@ -18,7 +19,7 @@ public class GetCode {
 
 		while(list.size() < s){ 
 
-			i = r.nextInt(10); 
+			i = r.nextInt(sumQuestion+1)+1; 
 
 			if(!list.contains(i)){ 
 
@@ -33,7 +34,7 @@ public class GetCode {
 		int i;
 		List<Content> listcon = new ArrayList<Content>();
 		for (i=0;i<list.size();i++){
-			Content con = dao.findById(String.valueOf(list.get(i)));
+			Content con = dao.findById(list.get(i));
 			listcon.add(con);
 		}
 		return listcon;

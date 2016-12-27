@@ -8,13 +8,13 @@ public class Content implements java.io.Serializable {
 
 	// Fields
 
-	private String id;
-	private String content;
-	private String answer;
-	private String qa;
-	private String qb;
-	private String qc;
-	private String qd;
+	private Integer id;
+	private String QContent;
+	private String QAnswer;
+	private String QA;
+	private String QB;
+	private String QC;
+	private String QD;
 
 	// Constructors
 
@@ -23,78 +23,78 @@ public class Content implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Content(String id) {
+	public Content(Integer id) {
 		this.id = id;
 	}
 
 	/** full constructor */
-	public Content(String id, String content, String answer, String qa,
-			String qb, String qc, String qd) {
+	public Content(Integer id, String QContent, String QAnswer, String QA,
+			String QB, String QC, String QD) {
 		this.id = id;
-		this.content = content;
-		this.answer = answer;
-		this.qa = qa;
-		this.qb = qb;
-		this.qc = qc;
-		this.qd = qd;
+		this.QContent = QContent;
+		this.QAnswer = QAnswer;
+		this.QA = QA;
+		this.QB = QB;
+		this.QC = QC;
+		this.QD = QD;
 	}
 
 	// Property accessors
 
-	public String getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getQContent() {
+		return this.QContent;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setQContent(String QContent) {
+		this.QContent = QContent;
 	}
 
-	public String getAnswer() {
-		return this.answer;
+	public String getQAnswer() {
+		return this.QAnswer;
 	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setQAnswer(String QAnswer) {
+		this.QAnswer = QAnswer;
 	}
 
-	public String getQa() {
-		return this.qa;
+	public String getQA() {
+		return this.QA;
 	}
 
-	public void setQa(String qa) {
-		this.qa = qa;
+	public void setQA(String QA) {
+		this.QA = QA;
 	}
 
-	public String getQb() {
-		return this.qb;
+	public String getQB() {
+		return this.QB;
 	}
 
-	public void setQb(String qb) {
-		this.qb = qb;
+	public void setQB(String QB) {
+		this.QB = QB;
 	}
 
-	public String getQc() {
-		return this.qc;
+	public String getQC() {
+		return this.QC;
 	}
 
-	public void setQc(String qc) {
-		this.qc = qc;
+	public void setQC(String QC) {
+		this.QC = QC;
 	}
 
-	public String getQd() {
-		return this.qd;
+	public String getQD() {
+		return this.QD;
 	}
 
-	public void setQd(String qd) {
-		this.qd = qd;
+	public void setQD(String QD) {
+		this.QD = QD;
 	}
 
 }
