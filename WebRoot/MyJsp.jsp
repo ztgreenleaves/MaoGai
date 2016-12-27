@@ -5,30 +5,50 @@
 <html>
 <head>
 <script type="text/javascript">
-	function fun(a) {
-		var x = document.getElementById(a).value;
-		var y = document.getElementById(a).name;
-		if (x != y) {
-			return false;
-		} else
-			return true;
+	function validateAnswer() {
+		var value = "";
+		var length = ${t};
+		for (var i = 0; i<length;i++){
+			value=value+","+getChicked(i+1);
+		}
+		document.getElementById("str").value = value;
+		document.getElementById("questionForm").action="getnumber!toOtherPage?answerStr="+value;
+		document.getElementById("questionForm").submit();
+		
+	}
+	function getChicked(name) {
+		var radio = document.getElementsByName(name);
+		var value;
+		for ( var i = 0; i < radio.length; i++) {
+			if (radio[i].checked == true) {
+				value = i+1;
+				break;
+			}
+		}
+		if (i==radio.length){
+			return 5;
+		}
+		else{
+			return value;
+		}
 	}
 </script>
 </head>
 
 <body>
-
-	<form>
-		<c:forEach var="ui" items="${list}">
+	<form id="questionForm" action="getnumber!toOtherPage" method="post">
+		<c:forEach var="ui" items="${list}" varStatus="status">
 			<fieldset>
-				<p>${ui.id} ${ui.QContent}</p>
-				<input type="hidden" id="${ui.id}" value="${ui.QAnswer}"> <input
-					type="radio" name="${ui.id}" value="A" />A.${ui.QA}<br /> <input
-					type="radio" name="${ui.id}" value="B" />B.${ui.QB}<br /> <input
-					type="radio" name="${ui.id}" value="C" />C.${ui.QC}<br /> <input
-					type="radio" name="${ui.id}" value="D" />D.${ui.QD}<br />
+				<p>${status.count} :${ui.id} ${ui.QContent}</p>
+				<input type="hidden" id="${status.count}" value="${ui.QAnswer}">
+				<input type="radio" name="${status.count}" value="A" />A.${ui.QA}<br />
+				<input type="radio" name="${status.count}" value="B" />B.${ui.QB}<br />
+				<input type="radio" name="${status.count}" value="C" />C.${ui.QC}<br />
+				<input type="radio" name="${status.count}" value="D" />D.${ui.QD}<br />
 			</fieldset>
 		</c:forEach>
+		<input type="hidden" id="str" name="answerStr"> <input
+			type="button" value="提交" onclick="validateAnswer();">
 	</form>
 </body>
 </html>

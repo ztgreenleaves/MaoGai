@@ -10,6 +10,13 @@ import DAO.ContentDAO;
 public class GetCode {
 	ContentDAO dao;
 	static int sumQuestion = 250;
+	public static List<String> initAnswerList(int t){
+		List<String> answerList = new ArrayList<String>();
+		for (int j = 0; j < t; j++){
+			answerList.add("E");
+		}
+		return answerList;
+	}
 	public  static List<Integer> Question(int s){
 		Random  r = new Random(); 
 
@@ -19,7 +26,7 @@ public class GetCode {
 
 		while(list.size() < s){ 
 
-			i = r.nextInt(sumQuestion+1)+1; 
+			i = r.nextInt(sumQuestion)+1; 
 
 			if(!list.contains(i)){ 
 

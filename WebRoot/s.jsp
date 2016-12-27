@@ -8,32 +8,6 @@
 </head>
 
 <body>
-	<table border="0" width="330">
-	<tr>
-				
-				<th></th>
-			</tr>
-		<c:forEach var="ui" items="${list}">
-			<tr>
-				<td>${ui.id} ${ui.content}</td>
-			</tr>
-
-			<tr>
-			<td><input type = "radio" name="${ui.id}radio">${ui.qa}</td>
-			</tr>
-			
-			<tr>
-			<td><input type = "radio" name="${ui.id}radio">${ui.qb}</td>
-			</tr>
-			
-			<tr>
-			<td><input type = "radio" name="${ui.id}radio">${ui.qc}</td>
-			</tr>
-			
-			<tr>
-			<td><input type = "radio" name="${ui.id}radio">${ui.qd}</td>
-			</tr>
-		</c:forEach>
-	</table>
+提交成功
 </body>
 </html>
