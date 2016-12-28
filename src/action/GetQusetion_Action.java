@@ -10,18 +10,25 @@ import org.omg.CORBA.Request;
 
 import DAO.Content;
 import DAO.ContentDAO;
+import service.Change;
 import service.GetCode;
+import service.GetWrongQuestion;
+import service.Validate;
 
 public class GetQusetion_Action {
 
 	List<Content> list;
-	String answerStr;// 答案存储字符串.以“1,1,2,3,5”类似存储;1=A 2=B ...
+	List<Content> qwrong;
+	String answerStr;// 绛旀瀛樺偍瀛楃涓�浠モ�1,1,2,3,5鈥濈被浼煎瓨鍌�1=A 2=B ...
 	private String number;
-	static List<String> answerList;
+//	private List<Integer> Correct;
+//	private List<Integer> Error;
+	List<String> answerList;
 	int t, i;
 	String s = "";
 	GetCode getcode;
-
+	GetWrongQuestion getwrong;
+	
 	public String getsuccess() {
 		t = Integer.parseInt(number);
 		answerList = getcode.initAnswerList(t);
@@ -31,9 +38,31 @@ public class GetQusetion_Action {
 		setList(getcode.getList(listcode));
 		return "success";
 	}
-
+	
+//	public String getgrade(){
+//		Change change = new Change();
+//		String[] newanswer = change.ChangeString(answerStr);
+//		Validate validate = new Validate(); 
+//		setCorrect(validate.CompareRight(list, newanswer));
+//		setError(validate.CompareFalse(list, newanswer));
+//		return "getsu";
+//	}
+	
 	public String toOtherPage() {
-		System.out.println("," + answerStr);
+		String answer1= answerStr.substring(1);
+		System.out.println("answerStr':"+answerStr);
+		System.out.println("answer1':"+answer1);
+		System.out.println("answer1'length:"+answer1.length());
+		Change change = new Change();
+		String[] newanswer = change.ChangeString(answer1);
+//		System.out.println("change.ChangeString(answer1)'s length:"+change.ChangeString(answer1).length);
+//		System.out.println("newanswer's length:"+newanswer.length);
+		Validate validate = new Validate();
+		setQwrong(getwrong.getwrongquestion(validate.CompareFalse(list, newanswer)));
+		setAnswerList(validate.wronganswer(list, newanswer));
+//		setCorrect(validate.CompareRight(list, newanswer));
+//		setError(validate.CompareFalse(list, newanswer));
+//		System.out.println("序号是"+yy);
 		return "success1";
 	}
 
@@ -61,12 +90,12 @@ public class GetQusetion_Action {
 		this.getcode = getcode;
 	}
 
-	public static List<String> getAnswerList() {
+	public List<String> getAnswerList() {
 		return answerList;
 	}
 
-	public static void setAnswerList(List<String> answerList) {
-		GetQusetion_Action.answerList = answerList;
+	public void setAnswerList(List<String> answerList) {
+		this.answerList = answerList;
 	}
 
 	public int getT() {
@@ -85,4 +114,36 @@ public class GetQusetion_Action {
 		this.answerStr = answerStr;
 	}
 
+	public List<Content> getQwrong() {
+		return qwrong;
+	}
+
+	public void setQwrong(List<Content> qwrong) {
+		this.qwrong = qwrong;
+	}
+
+	public GetWrongQuestion getGetwrong() {
+		return getwrong;
+	}
+
+	public void setGetwrong(GetWrongQuestion getwrong) {
+		this.getwrong = getwrong;
+	}
+	
+//	public List<Integer> getCorrect() {
+//		return Correct;
+//	}
+//
+//	public void setCorrect(List<Integer> correct) {
+//		Correct = correct;
+//	}
+//
+//	public List<Integer> getError() {
+//		return Error;
+//	}
+//
+//	public void setError(List<Integer> error) {
+//		Error = error;
+//	}
+	
 }

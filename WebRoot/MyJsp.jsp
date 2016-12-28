@@ -12,7 +12,8 @@
 			value=value+","+getChicked(i+1);
 		}
 		document.getElementById("str").value = value;
-		document.getElementById("questionForm").action="getnumber!toOtherPage?answerStr="+value;
+		alert(value);
+		document.getElementById("questionForm").action="getnumber!toOtherPage";
 		document.getElementById("questionForm").submit();
 		
 	}
@@ -21,16 +22,29 @@
 		var value;
 		for ( var i = 0; i < radio.length; i++) {
 			if (radio[i].checked == true) {
-				value = i+1;
+				value = getAlphabet(i+1);
 				break;
 			}
 		}
 		if (i==radio.length){
-			return 5;
+			return "E";
 		}
 		else{
 			return value;
 		}
+		
+	}
+	function getAlphabet(i){
+		if (i==1)
+			return "A";
+		if (i==2)
+			return "B";
+		if (i==3)
+			return "C";
+		if (i==4)
+			return "D";
+		if (i==5)
+			return "E";
 	}
 </script>
 </head>

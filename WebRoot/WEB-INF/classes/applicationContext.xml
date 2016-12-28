@@ -40,10 +40,16 @@
 		</property>
 	</bean>
 	<bean id="GetCode" class="service.GetCode">
-		<property name="dao" ref = "ContentDAO">
+		<property name="dao" ref="ContentDAO">
+		</property>
+	</bean>
+	<bean id="GetWrongQuestion" class="service.GetWrongQuestion">
+		<property name="newdao" ref="ContentDAO">
 		</property>
 	</bean>
 	<bean id="GetQusetion_Action" class="action.GetQusetion_Action">
-	<property name="getcode" ref="GetCode"></property>
+		<property name="getcode" ref="GetCode"></property>
+		<property name="getwrong" ref="GetWrongQuestion"></property>
 	</bean>
+
 </beans>
