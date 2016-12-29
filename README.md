@@ -7,3 +7,7 @@
   <li>MyEclipse</li>
   <li>Tomcat</li>
 </ul>
+Tips:content.sql和duoxiang.sql在项目的根目录下；数据库账号密码均为:root。
+
+为什么不放到服务器上？
+<h3>因为没钱！！！！</h3>
