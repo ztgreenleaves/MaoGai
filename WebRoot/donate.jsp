@@ -11,7 +11,8 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'index.jsp' starting page</title>
+<title>My JSP 'donate.jsp' starting page</title>
+
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -20,25 +21,28 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+
 <style type="text/css">
-body {
-	background-image: url("./img/bk2.jpg");
-	background-repeat: no-repeat; filter : alpha( Opacity = 80);
-	-moz-opacity: 0.8;
-	opacity: 0.8;
-	filter: alpha(Opacity = 80);
+p {
+	font-size: 20px;
+	font-family: "微软雅黑";
 }
-div{
-	height: 270;
+
+.box {
+	margin: 0 auto;
+	width: 800px;
 }
 </style>
 </head>
-
 <body>
-	<form action="getnumber">
-	<div></div>
-		<a class="btn-3" href="getnumber!getsuccess"><span>开始答题</span> </a>
-	</form>
+	
+	<div class="box">
+		<p>
+			给作者加个鸡腿吧！<br> 谢谢！
+		</p>
+		<div>
+			<img alt="支付宝" src="./img/AliPay.JPG">
+		</div>
+	</div>
 </body>
 </html>

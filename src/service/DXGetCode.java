@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import DAO.Content;
-import DAO.ContentDAO;
+import DAO.Duoxiang;
+import DAO.DuoxiangDAO;
 
-public class GetCode {
-	ContentDAO dao;
-	static int sumQuestion = 1000;
+
+
+public class DXGetCode {
+	DuoxiangDAO dao;
+	static int sumQuestion = 796;
 	public static List<String> initAnswerList(int t){
 		List<String> answerList = new ArrayList<String>();
 		for (int j = 0; j < t; j++){
@@ -37,19 +39,20 @@ public class GetCode {
 		}
 		return list;
 	}	
-	public List<Content> getList(List<Integer> list){
+	public List<Duoxiang> getList(List<Integer> list){
 		int i;
-		List<Content> listcon = new ArrayList<Content>();
+		List<Duoxiang> listcon = new ArrayList<Duoxiang>();
 		for (i=0;i<list.size();i++){
-			Content con = dao.findById(list.get(i));
+			Duoxiang con = dao.findById(list.get(i));
 			listcon.add(con);
 		}
 		return listcon;
 	}
-	public ContentDAO getDao() {
+	public DuoxiangDAO getDao() {
 		return dao;
 	}
-	public void setDao(ContentDAO dao) {
+	public void setDao(DuoxiangDAO dao) {
 		this.dao = dao;
 	}
+	
 }

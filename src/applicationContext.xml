@@ -27,6 +27,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>DAO/Content.hbm.xml</value>
+				<value>DAO/Duoxiang.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -35,6 +36,11 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<bean id="ContentDAO" class="DAO.ContentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DuoxiangDAO" class="DAO.DuoxiangDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -50,6 +56,17 @@
 	<bean id="GetQusetion_Action" class="action.GetQusetion_Action">
 		<property name="getcode" ref="GetCode"></property>
 		<property name="getwrong" ref="GetWrongQuestion"></property>
+		<property name="dxgetcode" ref="DXGetCode"></property>
+		<property name="dxgetwrongquestion" ref="DXGetWrongQuestion"></property>
 	</bean>
-
+	
+	<bean id="DXGetCode" class="service.DXGetCode">
+		<property name="dao" ref="DuoxiangDAO">
+		</property>
+	</bean>
+	
+	<bean id="DXGetWrongQuestion" class="service.DXGetWrongQuestion">
+		<property name="newdao" ref="DuoxiangDAO">
+		</property>
+	</bean>
 </beans>
