@@ -113,7 +113,7 @@ div#floatTips {
 	border: solid 1px #777;
 	padding: 3px;
 	top: 250px;
-	width: 300px;
+	width: 150px;
 	background: #333;
 	color: white;
 	opacity: 0.5; /*这两句没法通过验证的。。。*/
@@ -257,7 +257,7 @@ fieldset {
 			<c:forEach var="vi" items="${dxlist}" varStatus="statu">
 				<div class="box">
 					<fieldset>
-						<p>${statu.count+80} :${vi.id} ${vi.QContent}</p>
+						<p>${statu.count+80} :${vi.QContent}</p>
 						<input type="hidden" id="${statu.count+80}" value="${vi.QAnswer}">
 						<input type="checkbox" name="${statu.count+80}" value="A" />A.${vi.QA}<br />
 						<input type="checkbox" name="${statu.count+80}" value="B" />B.${vi.QB}<br />
