@@ -19,11 +19,12 @@ public class testQOP {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		QuestionOP qop = new QuestionOP();
-		String content = qop.getContent("./txt/单项2.txt");
+		String content = qop.getContent("./txt/多项12.txt");
 //		qop.setTxt(content);
-//		System.out.println(content);
-		List<String> q = qop.getQuestion(content,2,"(\\d+?\\s*?\\.)(.+?)([A-Z])");
-
+//		System.out.println(content);//([A-Z]{1})\\s*\\.(.+?)\\s{1} //answer
+		//(\\d+?\\s*?\\.)(.+?)([A-Z]{1,5}) //question
+		List<String> q = qop.getQuestion(content,2,"([A-Z]{1})\\s*\\.(.+?)\\s{1}");
+//		System.out.println(q.get(0));
 	}
 
 }

@@ -10,14 +10,15 @@ import DataOperation.QuestionOP;
 public class insertSQL {
 	public static void main(String[] args) {
 	
-		String fileName = "./txt/单项2.txt";
+		String fileName = "./txt/多项12.txt";
 		QuestionOP qop = new QuestionOP();
 		String content = qop.getContent(fileName);
 		// qop.setTxt(content);
 		// System.out.println(content);
-//		qop.getQ(fileName,172);
-//		qop.getAnswer(fileName,172);
-		qop.getA(fileName,172);
+		int begin = 765;
+//		qop.getQ(fileName,begin);
+//		qop.getAnswer(fileName,begin);
+		qop.getA(fileName,begin);
 	}
 
 }

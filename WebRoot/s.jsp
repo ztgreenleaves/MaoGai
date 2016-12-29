@@ -4,6 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<title>成绩显示</title>
 <script type="text/javascript">
         function Href() {
             var divDisp = document.getElementById("di").style.display;

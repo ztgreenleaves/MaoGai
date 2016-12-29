@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
+<title>100题</title>
 <script type="text/javascript">
 	var tips; 
 	var theTop = 250/*这是默认高度*/; 
