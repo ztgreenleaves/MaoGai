@@ -55,7 +55,6 @@
 		document.getElementById("grade").value = grade;
 		document.getElementById("questionForm").action="getnumber!toOtherPage";
 		document.getElementById("questionForm").submit();
-		
 	}
 	function getChicked(name) {
 		var radio = document.getElementsByName(name);
