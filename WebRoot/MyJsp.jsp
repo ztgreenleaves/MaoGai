@@ -36,7 +36,7 @@
 	}
 	function validateAnswer() {
 		var value = "";
-		var length = 100;
+		var length = 90;
 		var grade = 0;
 		for (var i = 0; i<length;i++){
 			var ans = document.getElementById(i+1).value;
@@ -46,8 +46,10 @@
 				return false;
 			}
 			value=value+","+choice;
-			if (choice == ans)
+			if (choice == ans && i+1 <= 80)
 				grade = grade + 1;
+			else if (choice == ans && i+1 >= 81)
+				grade = grade + 2;
 		}
 		document.getElementById("str").value = value;
 		document.getElementById("grade").value = grade;
@@ -117,7 +119,7 @@ div#floatTips {
 	background: #333;
 	color: white;
 	opacity: 0.5; /*这两句没法通过验证的。。。*/
-	filter: alpha(opacity =                           50);
+	filter: alpha(opacity =                             50);
 	/*这两句没法通过验证的。。。*/
 }
 
@@ -140,12 +142,12 @@ fieldset {
 	background: #000;
 	padding: 5px;
 	color: #F00;
-	filter: alpha(Opacity =                               50);
+	filter: alpha(Opacity =                                 50);
 	-moz-opacity: 0.5;
 	background: #000;
 	padding: 5px;
 	color: #F00;
-	filter: alpha(Opacity =                           40);
+	filter: alpha(Opacity =                             40);
 	-moz-opacity: 0.2;
 	opacity: 0.6;
 	color: white;
@@ -219,7 +221,9 @@ fieldset {
 
 
 
+
  
+
 
 
 
