@@ -40,8 +40,8 @@ public class GetQusetion_Action {
 	DXGetWrongQuestion dxgetwrongquestion;
 
 	public String getsuccess() {
-		t = 80;
-		y = 20;
+		t = 90;
+		y = 10;
 		// answerList = getcode.initAnswerList(t);
 		// GetCode getcode = new GetCode();
 		List<Integer> listcode = new ArrayList<Integer>();
